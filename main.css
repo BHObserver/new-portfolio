@@ -44,7 +44,6 @@ html {
     background-repeat: no-repeat;
     min-height: 100%;
   }
-
 }
 
 .w3-bar .w3-button {
@@ -134,7 +133,6 @@ html {
   color: #000;
 }
 
-
 .skills {
   border: 1px solid #c1c7d0;
   border-radius: 8px;
@@ -210,7 +208,8 @@ html {
   color: #000;
 }
 
-.project .w3-col.m6, .w3-half {
+.project .w3-col.m6,
+.w3-half {
   display: flex;
   justify-content: center;
   width: 100%;
