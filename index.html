@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/mobile-styles.css">
+    <link rel="stylesheet" href="styles/desktop-styles.css">
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
@@ -16,7 +19,7 @@
     <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-theme-d5" id="myNavbar">
-        <a href="#home" class="w3-bar-item w3-button w3-wide w3-padding-large w3-text-white">BURHAN UDDIN</a>
+       <!--  <a href="#home" class="w3-bar-item w3-button w3-wide w3-padding-large w3-text-white">BURHAN UDDIN</a> -->
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
             <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-text-white">ABOUT</a>
@@ -26,11 +29,19 @@
         </div>
         <!-- Hide right-floated links on small screens and replace them with a menu icon -->
         <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
-            onclick="w3_open()">
+            onclick="w3Open()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
 </div>
+
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display: none;" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3Close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3Close()" class="w3-bar-item w3-button w3-padding-large w3-text-white">ABOUT</a>
+  <a href="#projects" onclick="w3Close()" class="w3-bar-item w3-button w3-padding-large w3-text-white">PROJECTS</a>
+  <a href="#skills" onclick="w3Close()" class="w3-bar-item w3-button w3-padding-large w3-text-white">SKILLS</a>
+  <a href="#contact" onclick="w3Close()" class="w3-bar-item w3-button w3-padding-large w3-text-white">CONTACT</a>
+</nav>
 
 
     <!-- Header with full-height image -->
@@ -51,10 +62,35 @@
         </div>
     </header>
 
+
+    <section class="heading-text headline">
+      <div class="text-container">
+          <h1 class="primary">
+              <span class="color1 intro">
+                  Hey there. I'm Burhan. <br>
+              </span>
+              <span class="color2 intro">I'm a software developer</span>
+          </h1>
+          <p class="supporting-text">
+              I can help you build a product, feature or website. Look through some of my work and experience! If you like what you see and have a project you need coded, 
+              don't hesitate to contact me.
+          </p>
+      </div>    
+      <div class="icon-container">
+          <ul class="icons">
+              <li><a href="https://twitter.com/@BurhanU14173360"><img src="assets/twitter.svg" alt="Twitter"></a></li>
+              <li><a href="https://www.linkedin.com/in/bhobserver"><img src="assets/linkedin.svg" alt="LinkedIn"></a></li>
+              <li><a href="#"><img src="assets/medium.svg" alt="medium"></a></li>
+              <li><a href="https://github.com/bhobserver"><img src="assets/github.svg" alt="GitHub"></a></li> 
+              <li><a href="#"><img src="assets/angellist.svg" alt="Angellist"></a></li>
+         </ul>
+      </div>        
+  </section> 
+
     <!-- About Section -->
-<div class="w3-container" style="padding:128px 16px" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center w3-large">A passionate full-stack web developer</p>
+<div class="w3-container" style="padding: 60px 16px 16px 10px" id="about">
+  <h3 class="w3-center">ABOUT</h3>
+  <p class="w3-center w3-large">A passionate full-stack software developer</p>
   <div class="w3-row-padding w3-center" style="margin-top:64px">
     <div class="w3-quarter">
       <i class="fa fa-code w3-margin-bottom w3-jumbo"></i>
@@ -80,12 +116,12 @@
 </div>
 
     <!-- Promo Section - "Crafting Digital Experiences" -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
+<div class="w3-container promo" style="padding:128px 16px">
   <div class="w3-row-padding">
     <div class="w3-col m6">
       <h3>Crafting Digital Experiences.</h3>
       <p>Combining development and design to create seamless and engaging digital experiences.</p>
-      <p><a href="#work" class="w3-button w3-black"><i class="fas fa-code"></i>  View Our Projects</a></p>
+      <p><a href="#projects" class="w3-button w3-black"> View My Projects</a></p>
     </div>
     <div class="w3-col m6">
       <img class="w3-image w3-round-large" src="https://www.w3schools.com/w3images/phone_buildings.jpg" alt="Digital Experiences" width="700" height="394">
@@ -93,43 +129,205 @@
   </div>
 </div>
 
-   <!-- Projects Section -->
-<div class="w3-container" style="padding:128px 16px" id="projects">
+<section class="project">
+  <div class="w3-container" style="padding:80px 16px" id="projects">
     <h3 class="w3-center">PROJECTS</h3>
     <p class="w3-center w3-large">Check out some of my personal projects</p>
     <div class="w3-row-padding w3-center" style="margin-top:64px">
-        <div class="w3-col l3 m6">
-            <div class="project-item" data-live="live_project_url" data-code="code_project_url">
-                <img src="project1_image_url.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
-                <h4 class="project-title">Project 1</h4>
-                <p class="project-description">Short description of Project 1.</p>
+        <div class="project-container">
+            <div class="w3-card project-item" data-live="">
+              <img src="assets/img/recipe_app.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">delicious meals</h4>
+              <p class="project-description" style="display: none;">DELICIUOS MEALS The Meals App is a user-friendly web application that allows you to explore a wide variety of delicious meals, discover new recipes, and plan your meals effortlessly. Powered by APIs and built using Webpack, JavaScript, HTML, and stylish CSS, this app provides a seamless and enjoyable culinary experience for users.</p>
+              <ul class="tech-stack">
+                <li class="tag">Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
             </div>
+            <div class="w3-card project-item">
+              <img src="assets/img/car_rent.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">rent a car</h4>
+              <p class="project-description" style="display: none;">Rent a Car frontend is react forntend application for renting a car. This applications is responsive and users can load, create, and delete cars and reservations. Users need to sign up or sign in to access application. They can sign up or sign in using the sign up and login forms.</p>
+              <ul class="tech-stack">
+                <li class="tag">Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
+            </div>
+            <div class="w3-card project-item">
+              <img src="assets/img/space_travelers.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">space travelers hub</h4>
+              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <ul class="tech-stack project-description">
+                <li class="tag" >Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
+            </div>
+            <div class="w3-card project-item">
+              <img src="assets/img/capstone.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">space travelers hub</h4>
+              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <ul class="tech-stack project-description">
+                <li class="tag" >Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
+            </div>
+            <div class="w3-card project-item w3-hide">
+              <img src="assets/img/airstat.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">space travelers hub</h4>
+              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <ul class="tech-stack project-description">
+                <li class="tag" >Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
+            </div>
+            <div class="w3-card project-item w3-hide">
+              <img src="assets/img/todo.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">space travelers hub</h4>
+              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <ul class="tech-stack project-description">
+                <li class="tag" >Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
+            </div>
+            <div class="w3-card project-item w3-hide">
+              <img src="assets/img/colorgame.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">space travelers hub</h4>
+              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <ul class="tech-stack project-description">
+                <li class="tag" >Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
+            </div>
+            <div class="w3-card project-item w3-hide">
+              <img src="assets/img/moviefightt.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">space travelers hub</h4>
+              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <ul class="tech-stack project-description">
+                <li class="tag" >Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
+            </div>
+            <div class="w3-card project-item w3-hide">
+              <img src="assets/img/stopwatch.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">space travelers hub</h4>
+              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <ul class="tech-stack project-description">
+                <li class="tag" >Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
+            </div>
+            <div class="w3-card project-item w3-hide">
+              <img src="assets/img/maze.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">space travelers hub</h4>
+              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <ul class="tech-stack project-description">
+                <li class="tag" >Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
+            </div>
+            <div class="w3-card project-item w3-hide">
+              <img src="assets/img/finance.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">FinanceFlick</h4>
+              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <ul class="tech-stack project-description">
+                <li class="tag" >Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
+            </div>
+            <div class="w3-card project-item w3-hide">
+              <img src="assets/img/message.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
+              <h4 class="project-title">Secret Message</h4>
+              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <ul class="tech-stack project-description">
+                <li class="tag" >Ruby</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="btn-container">
+                <button onclick="onClick(this)">View More</button>
+              </div>
+            </div>
+
+            <!-- Repeat the above project item for other projects -->
         </div>
-        <!-- Repeat the above structure for other projects -->
     </div>
-</div>
+    <!-- Button to view more projects -->
+    <div class="w3-center" style="margin-top:32px;">
+      <button id="viewMoreBtn" class="w3-button w3-black w3-round-large">View More Projects</button>
+    </div>
+  </div>
+</section>
 
 <!-- Modal for full size images on click -->
 <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-    <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-        <img id="img01" class="w3-image">
-        <div id="project-details" class="w3-hide">
-            <h4 id="project-title"></h4>
-            <p id="project-description"></p>
-            <div class="project-buttons">
-                <a href="#" class="w3-button w3-black w3-round-large live-button" id="live-button">Live</a>
-                <a href="#" class="w3-button w3-black w3-round-large code-button" id="code-button">Code</a>
-            </div>
-        </div>
-        <p id="caption" class="w3-opacity w3-large"></p>
-    </div>
-</div>
-
-
-  <!-- Button to view more projects -->
-  <div class="w3-center" style="margin-top:32px;">
-    <a href="#" class="w3-button w3-black w3-round-large">View More Projects</a>
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <div id="project-details" class="w3-hide">
+          <h4 id="project-title"></h4>
+          <p id="project-description" style="display: block;"></p>
+          <div class="project-buttons">
+              <a href="#" class="w3-button w3-black w3-round-large live-button" id="live-button">Live</a>
+              <a href="#" class="w3-button w3-black w3-round-large code-button" id="code-button">Code</a>
+          </div>
+      </div>
+      <p id="caption" class="w3-opacity w3-large" style="visibility: hidden;"></p>
   </div>
 </div>
 
@@ -148,48 +346,67 @@
         <br>Happy Clients
     </div>
     <div class="w3-quarter">
-        <span class="w3-xxlarge">500+</span>
+        <span class="w3-xxlarge">1500+</span>
         <br>Hours of Coding
     </div>
 </div>
 
-
-<!-- Skills Section -->
-<div class="w3-container w3-light-grey w3-padding-64">
-    <div class="w3-row-padding">
-        <div class="w3-col m6">
-            <h3>Our Skills</h3>
-            <p>Here are some of our key skills in modern web development technologies:</p>
+<section class="skills-section">
+    <div class="w3-container w3-padding-64" id="skills">
+        <h2 class="w3-center">Skills</h2>
+      
+        <div class="w3-row-padding w3-margin-top">
+          <div class="w3-col l4 m6 w3-margin-bottom">
+              <div class="skills">
+                <div class="skill-tag-container">
+                  <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+                  <h3 class="skill-title">Languages</h3>
+                <ul>
+                  <li class="skill-tag">Ruby</li>
+                  <li class="skill-tag">JavaScript</li>
+                  <li class="skill-tag">HTML</li>
+                  <li class="skill-tag">CSS</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      
+          <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="skills">
+              <div class="skill-tag-container">
+                <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+                <h3 class="skill-title">Frameworks</h3>
+                <ul>
+                  <li class="skill-tag">React.js</li>
+                  <li class="skill-tag">Ruby on Rails</li>
+                  <li class="skill-tag">RSpec</li>
+                  <li class="skill-tag">Capybara</li>
+                  <li class="skill-tag">Selenium</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      
+          <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="skills">
+              <div class="skill-tag-container">
+                <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+                <h3 class="skill-title">Other Skills</h3>
+                <ul>
+                  <li class="skill-tag">Database Management</li>
+                  <li class="skill-tag">Version Control</li>
+                  <li class="skill-tag">CLI</li>
+                  <li class="skill-tag">Web Development</li>
+                  <li class="skill-tag">API Design</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="w3-col m6">
-            <div class="skill">
-                <p class="w3-wide"><i class="fa fa-node-js w3-margin-right"></i>Node.js</p>
-                <div class="w3-grey w3-round-large">
-                    <div class="w3-container w3-dark-grey w3-center w3-round-large skill-bar" style="width:90%">90%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <p class="w3-wide"><i class="fab fa-react w3-margin-right"></i>React</p>
-                <div class="w3-grey w3-round-large">
-                    <div class="w3-container w3-dark-grey w3-center w3-round-large skill-bar" style="width:85%">85%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <p class="w3-wide"><i class="fas fa-database w3-margin-right"></i>Database Design</p>
-                <div class="w3-grey w3-round-large">
-                    <div class="w3-container w3-dark-grey w3-center w3-round-large skill-bar" style="width:80%">80%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <p class="w3-wide"><i class="fa fa-ruby w3-margin-right"></i>Ruby on Rails</p>
-                <div class="w3-grey w3-round-large">
-                    <div class="w3-container w3-dark-grey w3-center w3-round-large skill-bar" style="width:75%">75%</div>
-                </div>
-            </div>
-            <!-- Add more skills as needed -->
-        </div>
-    </div>
-</div>
+      </div>
+    
+</section>
+  
 
 <!-- Testimonials Section -->
 <div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="testimonials">
@@ -198,23 +415,23 @@
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-third">
       <div class="testimonial">
-        <img src="client1_image.jpg" alt="Client 1" class="w3-circle" style="width:100px;height:100px">
-        <p class="client-name">John Doe</p>
-        <p class="testimonial-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+        <img src="https://petapixel.com/assets/uploads/2020/02/ERtZcPpWsAESTfl.jpg" alt="Client 1" class="w3-circle">
+        <p class="client-name">John Watson</p>
+        <p class="testimonial-text">"<b>Burhan Uddin</b> is a talented full-stack developer. His expertise in both front-end and back-end development, paired with his commitment to delivering results, makes him an invaluable member of any development team. Highly recommended."</p>
       </div>
     </div>
     <div class="w3-third">
       <div class="testimonial">
-        <img src="client2_image.jpg" alt="Client 2" class="w3-circle" style="width:100px;height:100px">
-        <p class="client-name">Jane Smith</p>
-        <p class="testimonial-text">"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+        <img src="https://petapixel.com/assets/uploads/2020/02/ERtZcPrXkAAmOhG.jpg" alt="Client 2" class="w3-circle">
+        <p class="client-name">James Kirk</p>
+        <p class="testimonial-text">"I highly recommend <b>Burhan Uddin</b> for his exceptional full-stack development skills. His ability to seamlessly navigate both front-end and back-end tasks, coupled with his dedication to delivering high-quality solutions, makes him a valuable asset to any project"</p>
       </div>
     </div>
     <div class="w3-third">
       <div class="testimonial">
-        <img src="client3_image.jpg" alt="Client 3" class="w3-circle" style="width:100px;height:100px">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.V_wDVXwI9ko3gr6W-XtZqgHaHa%26pid%3DApi&f=1&ipt=97f5e180cf32e83c365d2992c0a829cca1289618f1ed4df617efd2bd66d384f6&ipo=images" alt="Client 3" class="w3-circle">
         <p class="client-name">Alice Johnson</p>
-        <p class="testimonial-text">"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+        <p class="testimonial-text">"Working with <b>Burhan Uddin</b> was a pleasure. His proficiency in full-stack development, coupled with excellent communication and teamwork skills, ensured the success of our project. I would gladly collaborate with him again"</p>
       </div>
     </div>
   </div>
@@ -222,15 +439,30 @@
 
 
 
-    <!-- Contact Section -->
-    <div class="w3-container" style="padding:128px 16px" id="contact">
-        <h3 class="w3-center">CONTACT ME</h3>
-        <p class="w3-center w3-large">Get in touch with me</p>
-        <div class="w3-row-padding w3-center" style="margin-top:64px">
-            <!-- Contact form or contact information goes here -->
+<div class="w3-container w3-light-grey" style="padding: 128px 16px" id="contact">
+    <h3 class="w3-center">CONTACT</h3>
+    <p class="w3-center w3-large">Let's get in touch. Send us a message:</p>
+    <div style="margin-top: 48px">
+        <div class="contact-container">
+            <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Cox's Bazar, Bangladesh</p>
+            <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +88 01518652651</p>
+            <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: bhobserver0@gmail.com</p>
         </div>
+      <br>
+      <form id="contact-form" class="w3-container w3-card-4 w3-padding-16" action="https://formspree.io/f/mwkjgvpr" method="post">
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-border" type="email" placeholder="Email" required name="Email"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><textarea class="w3-input w3-border" placeholder="Message" required name="Message" rows="4"></textarea></p>
+        <p>
+          <button id="submit-btn" class="w3-button w3-black w3-hover-white w3-hover-text-black" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form>
     </div>
-
+  </div>
+  
     <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-64">
         <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
@@ -246,8 +478,7 @@
                 class="w3-hover-text-green">w3.css</a></p>
     </footer>
 
-    <script type="text/javascript" src="main.js"></script>
-
+<script src="script.js"></script>
 
 </body>
 
