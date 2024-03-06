@@ -1,0 +1,68 @@
+/* eslint-disable no-unused-vars */
+const onClick = (element) => {
+  const projectItem = element.closest('.project-item');
+  const imgSrc = element.src;
+  const title = projectItem.querySelector('.project-title').innerText;
+  const description = projectItem.querySelector('.project-description').innerText;
+  const liveUrl = projectItem.getAttribute('data-live');
+  const codeUrl = projectItem.getAttribute('data-code');
+
+  document.getElementById('img01').src = imgSrc;
+  document.getElementById('modal01').style.display = 'block';
+  document.getElementById('caption').innerHTML = title;
+
+  // Update project details
+  document.getElementById('project-title').innerHTML = title;
+  document.getElementById('project-description').innerHTML = description;
+  document.getElementById('live-button').setAttribute('href', liveUrl);
+  document.getElementById('code-button').setAttribute('href', codeUrl);
+
+  const projectDetails = document.getElementById('project-details');
+  projectDetails.classList.remove('w3-hide');
+};
+
+// Function to handle clicks on "Live" and "Code" buttons
+document.addEventListener('click', (event) => {
+  const { target } = event;
+  if (target.classList.contains('live-button')) {
+    const liveUrl = target.getAttribute('href');
+    window.open(liveUrl, '_blank');
+  } else if (target.classList.contains('code-button')) {
+    const codeUrl = target.getAttribute('href');
+    window.open(codeUrl, '_blank');
+  }
+});
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+const mySidebar = document.getElementById('mySidebar');
+
+const w3Open = () => {
+  mySidebar.style.display = (mySidebar.style.display === 'block') ? 'none' : 'block';
+};
+
+// Close the sidebar with the close button
+const w3Close = () => {
+  mySidebar.style.display = 'none';
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Function to toggle visibility of additional projects
+  const toggleAdditionalProjects = () => {
+    const additionalProjects = document.querySelectorAll('.project-item:nth-child(n+5)');
+    for (let i = 0; i < additionalProjects.length; i += 1) {
+      additionalProjects[i].classList.toggle('w3-hide');
+    }
+
+    // Change button text based on visibility state
+    const viewMoreBtn = document.getElementById('viewMoreBtn');
+    if (additionalProjects[0].classList.contains('w3-hide')) {
+      viewMoreBtn.textContent = 'View More Projects';
+    } else {
+      viewMoreBtn.textContent = 'View Less Projects';
+    }
+  };
+
+  // Event listener for the "View More Projects" button
+  const viewMoreBtn = document.getElementById('viewMoreBtn');
+  viewMoreBtn.addEventListener('click', toggleAdditionalProjects);
+});
