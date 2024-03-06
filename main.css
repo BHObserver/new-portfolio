@@ -1,7 +1,14 @@
 
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { font-family: "Raleway", sans-serif; }
 
-body, html {
+body,
+html {
   height: 100%;
   line-height: 1.8;
 }
@@ -14,85 +21,211 @@ body, html {
   min-height: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  .bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("https://www.w3schools.com/w3images/mac.jpg");
+.background-container {
+  position: relative;
   min-height: 100%;
 }
+
+.blurry-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://getwallpapers.com/wallpaper/full/f/c/9/1172748-developer-wallpaper-hd-2560x1440-for-full-hd.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
-.w3-bar {
-  background: #000;
-}
+@media screen and (max-width: 768px) {
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100%;
+  }
 
+}
 
 .w3-bar .w3-button {
   padding: 16px;
+  background: none;
+  color: #fff;
+}
+
+.project-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .project-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: #a8a6ae;
+  width: 270px;
+  height: 370px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.project-item img {
+  width: 100%;
+  height: 50%;
+  border-radius: 2px;
 }
 
 .project-item:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
+  transition: transform 0.7s ease;
+  border-radius: 50px 10px 50px 10px;
+}
+
+.project-item:nth-child(2n - 1):hover {
+  transform: translateY(-5px);
+  border-radius: 10px 50px 10px 50px;
 }
 
 .project-image {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
+  width: 375px;
+  height: 180px;
 }
 
-.project-image:hover {
-    transform: scale(1.05);
+.project-title {
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: 700;
 }
 
 .project-details {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 160px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  transition: opacity 0.3s ease;
 }
 
 .project-item:hover .project-details {
-    opacity: 1;
+  opacity: 1;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.btn-container button {
+  background: #616161;
+  border: none;
+  color: white;
+  border-radius: 2px;
+}
+
+.btn-container button:active {
+  background: #d5d3d3;
+  color: #000;
 }
 
 
-.skill {
-    margin-bottom: 20px;
+.skills {
+  border: 1px solid #c1c7d0;
+  border-radius: 8px;
+  background-color: #616161;
+  color: #f1f1f1;
+  padding: 2px;
+  padding-top: 2rem;
+  margin-top: 20px;
+  height: 336px;
+  width: 327px;
 }
 
-.skill-name {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
+.skills ul {
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.skill-name i {
-    margin-right: 10px;
-    font-size: 24px;
+.skill-tag-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.skill-tag {
+  background-color: #f1f1f1;
+  font-family: "Raleway", sans-serif;
+  border: none;
+  color: #000;
+  padding: 10px 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  margin-top: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-radius: 8px;
+  list-style-type: none;
 }
 
 .progress-bar {
-    height: 20px;
-    background-color: #f3f3f3;
-    border-radius: 10px;
-    width: 0;
-    transition: width 1s ease-in-out;
+  height: 20px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  width: 0;
+  transition: width 1s ease-in-out;
 }
 
 .w3-col.m6 .progress-bar {
-    width: 100%;
+  width: 100%;
+}
+
+.skills-section .w3-padding-64 {
+  display: flex;
+  padding-top: 64px !important;
+  padding-bottom: 64px !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.w3-quarter i {
+  color: #000;
+}
+
+.project .w3-col.m6, .w3-half {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.project {
+  background: #f0f0f0;
+}
+
+.promo {
+  background: #f6f6f6;
+}
+
+.testimonial img {
+  width: 150px;
+  height: 150px;
 }
