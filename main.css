@@ -71,9 +71,15 @@ html {
 }
 
 .project-item img {
+  filter: blur(5px);
   width: 100%;
   height: 50%;
   border-radius: 2px;
+}
+
+.project-item img:hover {
+  filter: none;
+  cursor: pointer;
 }
 
 .project-item:hover {
@@ -96,6 +102,7 @@ html {
   text-transform: capitalize;
   color: #fff;
   font-weight: 700;
+  text-shadow: 1px 1px 1px black;
 }
 
 .project-details {
@@ -126,6 +133,7 @@ html {
   border: none;
   color: white;
   border-radius: 2px;
+  text-shadow: 1px 0 0 black;
 }
 
 .btn-container button:active {
@@ -169,7 +177,7 @@ html {
   padding: 10px 12px;
   text-align: center;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13.3px;
   margin-top: 8px;
   margin-left: 4px;
   margin-right: 4px;
