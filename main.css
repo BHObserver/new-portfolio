@@ -132,6 +132,7 @@ html {
   background: #616161;
   border: none;
   color: white;
+  font-weight: 700;
   border-radius: 2px;
   text-shadow: 1px 0 0 black;
 }
