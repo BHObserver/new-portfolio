@@ -1,7 +1,13 @@
 /* eslint-disable no-unused-vars */
-const onClick = (element) => {
-  const projectItem = element.closest('.project-item');
-  const imgSrc = element.src;
+const onClick = (element, isViewMore = false) => {
+  let projectItem;
+  if (isViewMore) {
+    projectItem = element.closest('.project-item');
+  } else {
+    projectItem = element.closest('.project-item');
+  }
+
+  const imgSrc = projectItem.querySelector('img').src;
   const title = projectItem.querySelector('.project-title').innerText;
   const description = projectItem.querySelector('.project-description').innerText;
   const liveUrl = projectItem.getAttribute('data-live');
@@ -21,15 +27,35 @@ const onClick = (element) => {
   projectDetails.classList.remove('w3-hide');
 };
 
+// For clicking on images
+document.querySelectorAll('.w3-card.project-item img').forEach(img => {
+  img.addEventListener('click', () => {
+    onClick(img);
+  });
+});
+
+// For clicking on "View More" buttons
+document.getElementById('viewMoreBtn').addEventListener('click', () => {
+  const projectItems = document.querySelectorAll('.w3-card.project-item');
+  projectItems.forEach((projectItem) => {
+    if (projectItem.classList.contains('w3-hide')) {
+      projectItem.classList.remove('w3-hide');
+      onClick(projectItem, true);
+    }
+  });
+});
+
 // Function to handle clicks on "Live" and "Code" buttons
 document.addEventListener('click', (event) => {
   const { target } = event;
   if (target.classList.contains('live-button')) {
     const liveUrl = target.getAttribute('href');
     window.open(liveUrl, '_blank');
+    event.preventDefault(); // Prevents the default action of the link
   } else if (target.classList.contains('code-button')) {
     const codeUrl = target.getAttribute('href');
     window.open(codeUrl, '_blank');
+    event.preventDefault(); // Prevents the default action of the link
   }
 });
 
