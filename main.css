@@ -139,7 +139,8 @@ html {
 
 .btn-container button:active {
   background: #d5d3d3;
-  color: #000;
+  color: #616161;
+  font-weight: 100;
 }
 
 .skills {
