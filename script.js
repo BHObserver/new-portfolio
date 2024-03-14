@@ -34,7 +34,7 @@ document.querySelectorAll('.w3-card.project-item img').forEach(img => {
   });
 });
 
-// For clicking on "View More" buttons
+/* // For clicking on "View More" buttons
 document.getElementById('viewMoreBtn').addEventListener('click', () => {
   const projectItems = document.querySelectorAll('.w3-card.project-item');
   projectItems.forEach((projectItem) => {
@@ -43,7 +43,7 @@ document.getElementById('viewMoreBtn').addEventListener('click', () => {
       onClick(projectItem, true);
     }
   });
-});
+}); */
 
 // Function to handle clicks on "Live" and "Code" buttons
 document.addEventListener('click', (event) => {
@@ -91,4 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event listener for the "View More Projects" button
   const viewMoreBtn = document.getElementById('viewMoreBtn');
   viewMoreBtn.addEventListener('click', toggleAdditionalProjects);
+});
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+    });
+  });
 });
