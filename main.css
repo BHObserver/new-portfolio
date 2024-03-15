@@ -143,6 +143,10 @@ html {
   font-weight: 100;
 }
 
+.skills-section {
+  background-color: #f1f1f1;
+}
+
 .skills {
   border: 1px solid #c1c7d0;
   border-radius: 8px;
