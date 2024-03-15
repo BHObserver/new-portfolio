@@ -93,12 +93,23 @@ document.addEventListener('DOMContentLoaded', () => {
   viewMoreBtn.addEventListener('click', toggleAdditionalProjects);
 });
 
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener('click', (e) => {
+  anchor.addEventListener('click', function scr(e) {
     e.preventDefault();
 
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth',
     });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const resumeButton = document.getElementById('resume-button');
+
+  resumeButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const resumeUrl = 'https://example.com/your_resume.pdf'; // Replace 'https://example.com/your_resume.pdf' with the URL of your resume
+    window.open(resumeUrl, '_blank');
   });
 });
