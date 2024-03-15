@@ -12,6 +12,41 @@
     <link rel="stylesheet" href="styles/mobile-styles.css">
     <link rel="stylesheet" href="styles/desktop-styles.css">
     <link rel="stylesheet" type="text/css" href="main.css">
+
+    <style>
+      /* Basic styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .blog-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #e1e1e1;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 80px 16px;
+      }
+      .blog-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+      }
+      .blog-item {
+        flex: 0 0 auto;
+        margin-right: 20px;
+        scroll-snap-align: start;
+        width: 300px; /* Adjust width as needed */
+      }
+      .blog-item img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
 </head>
 
 <body>
@@ -89,7 +124,7 @@
   </section> 
 
     <!-- About Section -->
-<div class="w3-container" style="padding: 60px 16px 16px 10px" id="about">
+<section class="w3-container" style="padding: 60px 16px 16px 10px" id="about">
   <h3 class="w3-center">ABOUT</h3>
   <p class="w3-center w3-large">A passionate full-stack software developer</p>
   <div class="w3-row-padding w3-center" style="margin-top:64px">
@@ -114,21 +149,22 @@
       <p>Committed to providing reliable technical support and ensuring smooth functionality.</p>
     </div>
   </div>
-</div>
+</section>
 
     <!-- Promo Section - "Crafting Digital Experiences" -->
-<div class="w3-container promo" style="padding:128px 16px">
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3>Crafting Digital Experiences.</h3>
-      <p>Combining development and design to create seamless and engaging digital experiences.</p>
-      <p><a href="#projects" class="w3-button w3-black"> View My Projects</a></p>
+    <div class="w3-container promo" style="padding:128px 16px">
+      <div class="w3-row-padding">
+        <div class="w3-col m6">
+          <h3>Crafting Digital Experiences.</h3>
+          <p>As a full-stack web developer, I specialize in combining development and design to create seamless and engaging digital experiences. Whether it's building responsive websites, developing interactive web applications, or designing user-friendly interfaces, my goal is to deliver high-quality solutions that exceed expectations.</p>
+          <p><a href="#" id="resume-button" class="w3-button w3-black">Get My Resume</a></p>
+        </div>
+        <div class="w3-col m6">
+          <img class="w3-image w3-round-large" src="https://www.w3schools.com/w3images/phone_buildings.jpg" alt="Digital Experiences" width="700" height="394">
+        </div>
+      </div>
     </div>
-    <div class="w3-col m6">
-      <img class="w3-image w3-round-large" src="https://www.w3schools.com/w3images/phone_buildings.jpg" alt="Digital Experiences" width="700" height="394">
-    </div>
-  </div>
-</div>
+    
 
 <section class="project">
   <div class="w3-container" style="padding:80px 16px" id="projects">
@@ -172,8 +208,8 @@
               <ul class="tech-stack project-description">
                 <li class="tag">HTML</li>
                 <li class="tag">CSS</li>
-                <li class="tag" >React</li>
                 <li class="tag">JavaScript</li>
+                <li class="tag" >React</li>
               </ul>
               <div class="btn-container">
                 <button onclick="onClick(this)">View More</button>
@@ -185,10 +221,10 @@
               <h4 class="project-title">Finance Flick</h4>
               <p class="project-description" style="display: none;">FinanceFlick is a mobile web application meticulously crafted to empower users in managing their budgets effortlessly. Developed with Ruby on Rails, it ensures robust functionality and seamless user experience. Leveraging PostgreSQL for data storage, FinanceFlick allows users to create, organize, and track budgets efficiently. With a focus on unit testing and a functional website, it offers reliability and ease of use, making financial management a breeze.</p>
               <ul class="tech-stack project-description">
-                <li class="tag" >ROR</li>
                 <li class="tag">HTML</li>
                 <li class="tag">CSS</li>
                 <li class="tag">JavaScript</li>
+                <li class="tag" >ROR</li>
               </ul>
               <div class="btn-container">
                 <button onclick="onClick(this)">View More</button>
@@ -210,30 +246,30 @@
               </div>
             </div>
             
-            <div class="w3-card project-item w3-hide">
-              <img src="assets/img/capstone.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
-              <h4 class="project-title">space travelers hub</h4>
-              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+            <div class="w3-card project-item w3-hide" data-live="https://module-one-capstone-project.onrender.com" data-code="https://github.com/BHObserver/module-one-capstone-project">
+              <img src="assets/img/capstone.png" onclick="onClick(this)" class="w3-hover-opacity" alt="World Music Festival">
+              <h4 class="project-title">World Music Festival</h4>
+              <p class="project-description" style="display: none;">"Website about World Music Festival" is an immersive online platform meticulously crafted to showcase and celebrate the vibrant diversity of global music traditions. Scheduled to coincide with the upcoming World Music Festival, slated for September of this year, this website serves as a digital gateway inviting music enthusiasts from all corners of the globe to embark on an enriching musical journey.</p>
               <ul class="tech-stack project-description">
                 <li class="tag">HTML</li>
                 <li class="tag">CSS</li>
                 <li class="tag">JavaScript</li>
-                <li class="tag" >Ruby</li>
+                <li class="tag" >Git</li>
               </ul>
               <div class="btn-container">
                 <button onclick="onClick(this)">View More</button>
               </div>
             </div>
             
-            <div class="w3-card project-item w3-hide">
+            <div class="w3-card project-item w3-hide" data-live="https://to-do-list-vnif.onrender.com" data-code="https://github.com/BHObserver/To-Do-List">
               <img src="assets/img/todo.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
-              <h4 class="project-title">space travelers hub</h4>
-              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <h4 class="project-title">Todo App</h4>
+              <p class="project-description" style="display: none;"></p>
               <ul class="tech-stack project-description">
-                <li class="tag" >Ruby</li>
-                <li class="tag">JavaScript</li>
                 <li class="tag">HTML</li>
                 <li class="tag">CSS</li>
+                <li class="tag">JS</li>
+                <li class="tag" >Webpack</li>
               </ul>
               <div class="btn-container">
                 <button onclick="onClick(this)">View More</button>
@@ -241,13 +277,13 @@
             </div>
             <div class="w3-card project-item w3-hide">
               <img src="assets/img/colorgame.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
-              <h4 class="project-title">space travelers hub</h4>
-              <p class="project-description" style="display: none;">Short description of Project 1.</p>
+              <h4 class="project-title">Color Guessing Game</h4>
+              <p class="project-description" style="display: none;"></p>
               <ul class="tech-stack project-description">
-                <li class="tag" >Ruby</li>
-                <li class="tag">JavaScript</li>
                 <li class="tag">HTML</li>
                 <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">RGB</li>
               </ul>
               <div class="btn-container">
                 <button onclick="onClick(this)">View More</button>
@@ -255,13 +291,13 @@
             </div>
             <div class="w3-card project-item w3-hide">
               <img src="assets/img/moviefightt.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
-              <h4 class="project-title">space travelers hub</h4>
+              <h4 class="project-title">Movie Fight</h4>
               <p class="project-description" style="display: none;">Short description of Project 1.</p>
               <ul class="tech-stack project-description">
-                <li class="tag" >Ruby</li>
-                <li class="tag">JavaScript</li>
                 <li class="tag">HTML</li>
                 <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag" >API</li>
               </ul>
               <div class="btn-container">
                 <button onclick="onClick(this)">View More</button>
@@ -269,13 +305,13 @@
             </div>
             <div class="w3-card project-item w3-hide">
               <img src="assets/img/stopwatch.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
-              <h4 class="project-title">space travelers hub</h4>
+              <h4 class="project-title">Stopwatch</h4>
               <p class="project-description" style="display: none;">Short description of Project 1.</p>
               <ul class="tech-stack project-description">
-                <li class="tag" >Ruby</li>
-                <li class="tag">JavaScript</li>
                 <li class="tag">HTML</li>
                 <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">Git</li>
               </ul>
               <div class="btn-container">
                 <button onclick="onClick(this)">View More</button>
@@ -283,13 +319,13 @@
             </div>
             <div class="w3-card project-item w3-hide">
               <img src="assets/img/maze.png" onclick="onClick(this)" class="w3-hover-opacity" alt="Project 1">
-              <h4 class="project-title">space travelers hub</h4>
+              <h4 class="project-title">Maze Game</h4>
               <p class="project-description" style="display: none;">Short description of Project 1.</p>
               <ul class="tech-stack project-description">
-                <li class="tag" >Ruby</li>
-                <li class="tag">JavaScript</li>
                 <li class="tag">HTML</li>
                 <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag" >Git</li>
               </ul>
               <div class="btn-container">
                 <button onclick="onClick(this)">View More</button>
@@ -301,10 +337,10 @@
               <h4 class="project-title">Secret Message</h4>
               <p class="project-description" style="display: none;">Short description of Project 1.</p>
               <ul class="tech-stack project-description">
-                <li class="tag" >Ruby</li>
-                <li class="tag">JavaScript</li>
                 <li class="tag">HTML</li>
                 <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">Git</li>
               </ul>
               <div class="btn-container">
                 <button onclick="onClick(this)">View More</button>
@@ -316,9 +352,9 @@
               <p class="project-description" style="display: none;">Short description of Project 1.</p>
               <ul class="tech-stack project-description">
                 <li class="tag" >Ruby</li>
-                <li class="tag">JavaScript</li>
-                <li class="tag">HTML</li>
-                <li class="tag">CSS</li>
+                <li class="tag">Rspec</li>
+                <li class="tag">Console</li>
+                <li class="tag">IRB</li>
               </ul>
               <div class="btn-container">
                 <button onclick="onClick(this)">View More</button>
@@ -427,7 +463,27 @@
       </div>
     
 </section>
-  
+
+
+<!-- Blog Section-->
+<section class="blog-container" id="blog">
+  <h3 class="w3-center">BLOG</h3>
+  <div class="blog-carousel">
+    <div class="blog-item">
+      <img src="https://s3.amazonaws.com/rewireme/find-your-path-cover.jpg" alt="Blog Image">
+      <h4>My Journey Towards Web Development</h4>
+      <p>Embarking on the journey towards web development is akin to setting sail on a vast ocean of endless possibilities</p>
+      <a href="https://medium.com/@bhobserver0/my-journey-towards-web-development-from-novice-to-full-stack-developer-3d495e570b16">Read more</a>
+    </div>
+    <div class="blog-item">
+      <img src="https://i1.wp.com/www.walkingwiththelion.com/wp-content/uploads/2018/08/strive.jpg?fit=980%2C653&ssl=1" alt="Blog Image">
+      <h4>Embracing Unconventional Paths</h4>
+      <p>In a society often dictated by traditional norms and expectations, I embarked on a journey that diverged from the well-trodden path. In Bangladesh</p>
+      <a href="https://medium.com/@bhobserver0/embracing-unconventional-paths-pursuing-passion-through-self-learning-8461e792f82d">Read more</a>
+    </div>
+    <!-- Add more blog items as needed -->
+  </div>
+</section>
 
 <!-- Testimonials Section -->
 <div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="testimonials">
