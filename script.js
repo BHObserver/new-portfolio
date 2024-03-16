@@ -28,7 +28,7 @@ const onClick = (element, isViewMore = false) => {
 };
 
 // For clicking on images
-document.querySelectorAll('.w3-card.project-item img').forEach(img => {
+document.querySelectorAll('.w3-card.project-item img').forEach((img) => {
   img.addEventListener('click', () => {
     onClick(img);
   });
