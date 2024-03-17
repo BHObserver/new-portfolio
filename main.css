@@ -242,3 +242,38 @@ html {
   width: 150px;
   height: 150px;
 }
+
+.blog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #e1e1e1;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px 16px; /* Reduced padding for smaller screens */
+}
+
+.blog-carousel {
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  margin-top: 20px; /* Add some space between carousel and container */
+}
+
+.blog-item {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  scroll-snap-align: start;
+  width: 250px;
+}
+
+.blog-item img {
+  max-width: 100%;
+  height: auto;
+}
